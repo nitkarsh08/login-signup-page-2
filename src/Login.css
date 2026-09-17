@@ -1,0 +1,224 @@
+.lr-page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #eeefec;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  box-sizing: border-box;
+}
+.lr-page *, .lr-page *::before, .lr-page *::after {
+  box-sizing: border-box;
+}
+
+.lr-card {
+  position: relative;
+  width: 100%;
+  max-width: 880px;
+  height: 560px;
+  background: #fff;
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+
+.lr-panel {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  padding: 0 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.lr-panel-left { left: 0; }
+.lr-panel-right { right: 0; }
+
+.lr-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 28px;
+}
+
+.lr-field { margin-bottom: 16px; }
+
+.lr-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 6px;
+}
+
+.lr-input-wrap { position: relative; }
+
+.lr-input {
+  width: 100%;
+  background: #f1f1f1;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  transition: box-shadow 0.2s ease;
+}
+.lr-input::placeholder { color: #9a9a9a; }
+.lr-input:focus { box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12); }
+
+.lr-eye {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9a9a9a;
+  padding: 0;
+  display: flex;
+}
+.lr-eye:hover { color: #555; }
+
+.lr-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+.lr-remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+}
+.lr-remember input { accent-color: #2563eb; width: 15px; height: 15px; }
+
+.lr-link {
+  color: #2563eb;
+  font-weight: 500;
+  text-decoration: none;
+}
+.lr-link:hover { text-decoration: underline; }
+
+.lr-btn {
+  width: 100%;
+  padding: 13px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.lr-btn:hover { background: #333; }
+
+.lr-social-label {
+  text-align: center;
+  font-size: 13px;
+  color: #999;
+  margin: 16px 0;
+}
+
+.lr-social-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.lr-social-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.lr-social-btn:hover { background: #e2e2e2; }
+
+/* ---------- sliding overlay ---------- */
+
+.lr-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 50%;
+  height: 100%;
+  transition: transform 0.7s ease-in-out;
+}
+.lr-overlay-right { transform: translateX(100%); }
+.lr-overlay-left  { transform: translateX(0%); }
+
+.lr-overlay-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.lr-overlay-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(35, 42, 48, 0.55), rgba(0, 0, 0, 0.9)),
+    radial-gradient(circle at 30% 20%, #4b5a63 0%, #232b30 45%, #0a0d0f 100%);
+  /* swap for a real photo if you like: */
+  /* background-image: linear-gradient(...), url('/mountain.jpg'); background-size: cover; background-position: center; */
+}
+
+.lr-overlay-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 40px;
+  color: #fff;
+}
+.lr-overlay-content h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+.lr-overlay-content p {
+  font-size: 14px;
+  color: #ddd;
+  margin: 0 0 24px;
+}
+
+.lr-ghost-btn {
+  padding: 10px 28px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.lr-ghost-btn:hover { background: rgba(255, 255, 255, 0.25); }
+
+/* ---------- responsive ---------- */
+@media (max-width: 720px) {
+  .lr-card { height: auto; min-height: 640px; }
+  .lr-panel { padding: 0 28px; }
+}
