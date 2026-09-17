@@ -1,4 +1,4 @@
-import Login from './login'
+import Login from './Login'
 import Poster from './Poster'
 
 function App() {
